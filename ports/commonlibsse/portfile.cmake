@@ -1,0 +1,27 @@
+vcpkg_from_github(
+  OUT_SOURCE_PATH SOURCE_PATH
+  REPO color-glass/CommonLibSSE
+  REF 35429a213048a392594849bb036bc432eaa382e5
+  SHA512 0213f0613520c859223340d4a6a9f0d442126807e5689fb61489121f03d9e21475b0f369d1f91f9c386ee67002a528a784eef7a2604652846a18743f6c20c295
+  HEAD_REF master
+)
+
+vcpkg_configure_cmake(
+  SOURCE_PATH "${SOURCE_PATH}"
+  PREFER_NINJA
+)
+
+vcpkg_install_cmake()
+vcpkg_cmake_config_fixup(PACKAGE_NAME CommonLibSSE CONFIG_PATH lib/cmake)
+vcpkg_copy_pdbs()
+
+file(GLOB CMAKE_CONFIGS "${CURRENT_PACKAGES_DIR}/share/CommonLibSSE/CommonLibSSE/*.cmake")
+file(INSTALL ${CMAKE_CONFIGS} DESTINATION "${CURRENT_PACKAGES_DIR}/share/CommonLibSSE")
+
+file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/include")
+file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/share/CommonLibSSE/CommonLibSSE")
+
+file(
+  INSTALL "${SOURCE_PATH}/LICENSE"
+  DESTINATION "${CURRENT_PACKAGES_DIR}/share/${PORT}"
+  RENAME copyright)
