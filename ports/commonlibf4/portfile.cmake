@@ -1,8 +1,8 @@
 vcpkg_from_github(
   OUT_SOURCE_PATH SOURCE_PATH
   REPO Ryan-rsm-McKenzie/CommonLibF4
-  REF a05fffe3714d0359b04cf271454020cfeaf541e4
-  SHA512 8c6af6a6114db45c112999001fe993ad879fabca1af680ad85b4efc448b0197cbd630964bc46d3fc2910f1fb5f53aa5ca23866f8a96d0165e6f6c196a2b5d4f5
+  REF cdd932ad1f4e37f33c28ea7d7e429428f5be43dd
+  SHA512 fd72180dbecb8145547100e77d39de95400e944c66849ddcf6fdf349c65324551cd8316f25fb70543d0b724fd4241f9f935c4e239efbd4136662a490413d2185
   HEAD_REF master
 )
 # There's no way to select cmake presets with vcpkg currently, so we have to copy all the params from them.
