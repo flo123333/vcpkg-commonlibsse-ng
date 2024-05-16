@@ -16,7 +16,7 @@ To add to your project create a file in the root of your project (next to `vcpkg
         "articuno",
         "bethesda-fallout4-scripts",
         "bethesda-skyrim-scripts",
-        "commonlibf4"
+        "commonlibf4",
         "commonlibsse",
         "commonlibsse-ng",
         "commonlibsse-ng-ae",
